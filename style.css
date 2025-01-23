@@ -1,0 +1,110 @@
+
+.donut-center {
+    display: flex;
+    flex-direction: column; /* Align items in a column: chart on top, legend below */
+    justify-content: center;
+    align-items: center; /* Horizontally center items */
+    gap: 20px; /* Space between the chart and the legend */
+  }
+  .donut-chart {
+    position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff; /* Inner border */
+  box-shadow: 0 0 0 5px #80C4E9; /* Outer border effect */
+  animation: rotateChart 2s ease-in-out forwards; /* Add rotation animation */
+  }
+  
+  /* Base styles for each slice */
+  .slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50%);
+    background-color: transparent;
+  }
+  
+  /* Slice 1 (green) */
+  .slice-1 {
+    background: conic-gradient(
+      #4caf50 0deg 90deg, /* Green slice */
+      transparent 90deg 360deg
+    );
+  }
+  
+  /* Slice 2 (blue) */
+  .slice-2 {
+    background: conic-gradient(
+      transparent 0deg 90deg, 
+      #2196f3 90deg 160deg, /* Blue slice */
+      transparent 150deg 360deg
+    );
+  }
+  
+  /* Slice 3 (yellow) */
+  .slice-3 {
+    background: conic-gradient(
+      transparent 0deg 160deg, 
+      #f44336 150deg 360deg, /* Yellow slice */
+      transparent 180deg 360deg
+    );
+  }
+  
+ 
+  
+  /* Center cutout */
+  .center-circle {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  /* Keyframes for rotation */
+  @keyframes rotateChart {
+    from {
+      transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    to {
+      transform: rotate(270deg); /* Rotate to 270 degrees */
+    }
+  }
+ 
+  /* Legend Row Styling */
+.legend-row {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px; /* Add spacing between legend items */
+  }
+  
+  .legend-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .color-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 3px;
+  }
+  
+  /* Colors for the legend */
+  .color-box.green {
+    background-color: #4caf50;
+  }
+  
+  .color-box.blue {
+    background-color: #2196f3;
+  }
+  
+  .color-box.red {
+    background-color: #f44336;
+  }
